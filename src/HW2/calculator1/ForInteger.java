@@ -1,8 +1,8 @@
-package HW2.Calculator1;
+package HW2.calculator1;
 
 import java.util.Scanner;
 
-public class forInteger {
+public class ForInteger {
     public static void main() {
         //сканируем ввод и выбираем тип действия
         Scanner scan = new Scanner(System.in);
@@ -33,6 +33,8 @@ public class forInteger {
             case ("div"):
                 div(numb1, numb2);
                 break;
+            default:
+                System.out.println("Что-то пошло не так");
 
         }
     }
@@ -52,6 +54,6 @@ public class forInteger {
     }
 
     public static void div(int a, int b) {
-        System.out.println(a / b);
+        System.out.println(a * 1.0 / b);
     }
 }

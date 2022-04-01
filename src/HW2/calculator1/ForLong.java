@@ -1,8 +1,8 @@
-package HW2.Calculator1;
+package HW2.calculator1;
 
 import java.util.Scanner;
 
-public class forLong {
+public class ForLong {
     public static void main() {
         //сканируем ввод и выбираем тип действия
         Scanner scan = new Scanner(System.in);
@@ -33,12 +33,14 @@ public class forLong {
             case ("div"):
                 div(numb1, numb2);
                 break;
+            default:
+                System.out.println("Что-то пошло не так");
 
         }
     }
 
 
-    public static void sum(long  a, long b) {
+    public static void sum(long a, long b) {
         System.out.println(a + b);
 
     }
@@ -52,6 +54,6 @@ public class forLong {
     }
 
     public static void div(long a, long b) {
-        System.out.println(a / b);
+        System.out.println(a * 1.0 / b);
     }
 }

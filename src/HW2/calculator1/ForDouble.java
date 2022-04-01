@@ -1,8 +1,8 @@
-package HW2.Calculator1;
+package HW2.calculator1;
 
 import java.util.Scanner;
 
-public class forDouble {
+public class ForDouble {
     public static void main() {
         //сканируем ввод и выбираем тип действия
         Scanner scan = new Scanner(System.in);
@@ -33,6 +33,8 @@ public class forDouble {
             case ("div"):
                 div(numb1, numb2);
                 break;
+            default:
+                System.out.println("Что-то пошло не так");
 
         }
     }

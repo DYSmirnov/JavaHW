@@ -1,9 +1,9 @@
-package HW2.Constract;
+package HW2.constract;
 
 public class Flower {
-    String name;
-    String color;
-    double price;
+    private String name;
+    private String color;
+    private double price;
 
     public Flower(){
 

@@ -1,4 +1,4 @@
-package HW2.Calculator1;
+package HW2.calculator1;
 
 import java.util.Scanner;
 
@@ -13,14 +13,16 @@ public class MainCalc {
 
         switch (numbType) {
             case ("int"):
-                forInteger.main();
+                ForInteger.main();
                 break;
             case ("long"):
-                forLong.main();
+                ForLong.main();
                 break;
             case ("double"):
-                forDouble.main();
+                ForDouble.main();
                 break;
+            default:
+                System.out.println("Что-то пошло не так");
         }
     }
 

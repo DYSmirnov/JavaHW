@@ -1,4 +1,4 @@
-package HW2.SimpleCalculator;
+package HW2.simple.calculator;
 
 public class Calc {
 
@@ -40,10 +40,10 @@ public class Calc {
 
     //деление
     public static void div(int a, int b){
-        System.out.println(a/b);
+        System.out.println(a*1.0/b);
     }
     public static void div(long a, long b){
-        System.out.println(a/b);
+        System.out.println(a*1.0/b);
     }
 
     public static void div(double a, double b){
