@@ -98,11 +98,14 @@ public class Str {
     }
 
     public static void ex5(String text) {
+        System.out.println("The given string is: " + text);
         String[] str = text.split(" ");
+        StringBuilder revText = new StringBuilder();
         for (String i : str) {
-            StringBuilder textSB = new StringBuilder(i);
-            System.out.print(textSB.reverse() + " ");
+            revText.append(new StringBuilder(i).reverse()).append(" ");
         }
+        System.out.println("The string reversed word by word is: ");
+        System.out.println(revText);
     }
 
 }
