@@ -12,6 +12,7 @@ public class Str {
 //                "можно встретить упоминание такого относительно нового для экосистемы " +
 //                "Hadoop инструмента как Apache NiFi.");
 //        ex2("Отель Лето");
+//        ex2v2("Отель Лето");
 //        ex3("Не будь как бяка.", "бяка", "[вырезано цензурой]");
 //        ex4("Тридцать три коровы,\n" +
 //                "Тридцать три коровы,\n" +
@@ -20,14 +21,14 @@ public class Str {
 //                "Тридцать три коровы,\n" +
 //                "Стих родился новый,\n" +
 //                "Как стакан парного молока.", "три");
-        ex4RegEx("Тридцать три коровы,\n" +
-                "Тридцать три коровы,\n" +
-                "Тридцать три коровы,\n" +
-                "Свежая стpока.\n" +
-                "Тридцать три коровы,\n" +
-                "Стих родился новый,\n" +
-                "Как стакан парного молока.", "три");
-//        ex5("The given string is: This is a test string");
+//        ex4RegEx("Тридцать три коровы,\n" +
+//                "Тридцать три коровы,\n" +
+//                "Тридцать три коровы,\n" +
+//                "Свежая стpока.\n" +
+//                "Тридцать три коровы,\n" +
+//                "Стих родился новый,\n" +
+//                "Как стакан парного молока.", "три");
+        ex5("This is a test string");
     }
 
 
@@ -63,6 +64,12 @@ public class Str {
         System.out.println(result ? "Это палиндромом" : "Это не палиндромом");
     }
 
+    public static void ex2v2(String stringEx2) {
+        stringEx2 = stringEx2.replaceAll(" ", "").toLowerCase();
+        StringBuilder reverseString = new StringBuilder(stringEx2).reverse();
+        System.out.println(stringEx2.equals(reverseString.toString()) ? "Это палиндромом" : "Это не палиндромом");
+    }
+
     public static void ex3(String text, String censWord, String newWord) {
         String newString = text.replaceAll(censWord, newWord);
         System.out.println(newString);
@@ -73,7 +80,7 @@ public class Str {
         String[] str = text.toLowerCase().split(" ");
         int count = 0;
         for (String i : str) {
-            if(word.equals(i))
+            if (word.equals(i))
                 count++;
         }
         System.out.println("Слово " + word + " в тексте встречается " + count + " раз.");
@@ -91,8 +98,11 @@ public class Str {
     }
 
     public static void ex5(String text) {
-        StringBuilder textSB = new StringBuilder(text);
-        System.out.println(textSB.reverse());
+        String[] str = text.split(" ");
+        for (String i : str) {
+            StringBuilder textSB = new StringBuilder(i);
+            System.out.print(textSB.reverse() + " ");
+        }
     }
 
 }
