@@ -1,23 +1,33 @@
 package HW4;
 
 
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Str {
 
     public static void main(String[] args) {
-        ex1("Сегодня на тематических зарубежных сайтах о Big Data " +
-                "можно встретить упоминание такого относительно нового для экосистемы " +
-                "Hadoop инструмента как Apache NiFi.");
-        ex2("Отель Лето");
-        ex3("Не будь как бяка.", "бяка", "[вырезано цензурой]");
-        ex4("Тридцать три коровы,\n" +
+//        ex1("Сегодня на тематических зарубежных сайтах о Big Data " +
+//                "можно встретить упоминание такого относительно нового для экосистемы " +
+//                "Hadoop инструмента как Apache NiFi.");
+//        ex2("Отель Лето");
+//        ex3("Не будь как бяка.", "бяка", "[вырезано цензурой]");
+//        ex4("Тридцать три коровы,\n" +
+//                "Тридцать три коровы,\n" +
+//                "Тридцать три коровы,\n" +
+//                "Свежая стpока.\n" +
+//                "Тридцать три коровы,\n" +
+//                "Стих родился новый,\n" +
+//                "Как стакан парного молока.", "три");
+        ex4RegEx("Тридцать три коровы,\n" +
                 "Тридцать три коровы,\n" +
                 "Тридцать три коровы,\n" +
                 "Свежая стpока.\n" +
                 "Тридцать три коровы,\n" +
                 "Стих родился новый,\n" +
                 "Как стакан парного молока.", "три");
-        ex5("The given string is: This is a test string");
+//        ex5("The given string is: This is a test string");
     }
 
 
@@ -59,6 +69,7 @@ public class Str {
     }
 
     public static void ex4(String text, String word) {
+        //считает совпадения где есть точное совпадение с word
         String[] str = text.toLowerCase().split(" ");
         int count = 0;
         for (String i : str) {
@@ -66,6 +77,17 @@ public class Str {
                 count++;
         }
         System.out.println("Слово " + word + " в тексте встречается " + count + " раз.");
+    }
+
+    public static void ex4RegEx(String text, String word) {
+        //считает все совпадения где есть вхождение word
+        String str = text.toLowerCase();
+        Pattern pattern = Pattern.compile(word);
+        Matcher matcher = pattern.matcher(str);
+        int count = 0;
+        while (matcher.find())
+            count++;
+        System.out.println(count);
     }
 
     public static void ex5(String text) {
