@@ -3,7 +3,6 @@ package HW7;
 public class Plane {
     private String name;
     private int places;
-    Wing wing = new Wing();
 
     public Plane() {
     }
@@ -13,16 +12,8 @@ public class Plane {
         this.places = places;
     }
 
-    public Plane(String name, int places, double leftWing, double rightWing) {
-        this.name = name;
-        this.places = places;
-        setWeightWing(leftWing, rightWing);
-    }
 
-    public void setWeightWing(double leftWing, double rightWing) {
-        wing.setWeightLeft(leftWing);
-        wing.setWeightRight(rightWing);
-    }
+
 
     public String getName() {
         return name;
@@ -40,39 +31,32 @@ public class Plane {
         this.places = places;
     }
 
-    public void getInfo(){
+    public void getInfo() {
         System.out.println("Plane name: " + name);
         System.out.println("aircraft capacity - " + places);
-        System.out.println("weight of the left wing - " + wing.getWeightLeft());
-        System.out.println("weight of the right wing - " + wing.getWeightRight());
     }
 
 
-    class Wing {
-        private double weightLeft;
-        private double weightRight;
+    static class Wing {
+        private double weight;
+
 
         public double getWeightLeft() {
-            return weightLeft;
+            return weight;
         }
 
-        public void setWeightLeft(double weightLeft) {
-            this.weightLeft = weightLeft;
+        public void setWeightLeft(double weight) {
+            this.weight = weight;
         }
 
-        public double getWeightRight() {
-            return weightRight;
+        public  Wing(double weight) {
+            this.weight = weight;
         }
 
-        public void setWeightRight(double weightRight) {
-            this.weightRight = weightRight;
+        public void infoWing() {
+            System.out.println("Wing weight - " + this.weight);
         }
 
-        public Wing(double weightLeft, double weightRight) {
-            this.weightLeft = weightLeft;
-            this.weightRight = weightRight;
-        }
-
-        public Wing(){};
+        ;
     }
 }
