@@ -32,16 +32,16 @@ public class TestUser {
             if (pair.getKey().getName().equals(foundName)) {
                 score = pair.getValue();
                 break;
-
             }
         }
-        System.out.println((score == null ? "Ошибка ввода или игрок не зарегестрирован" : "Участник набрал " +  score));
+        System.out.println((score == null ? "Ошибка ввода или игрок не зарегестрирован" : "Участник набрал " + score));
 
     }
-        public static void showUsers (Map < User, Integer > map){
-            for (Map.Entry<User, Integer> pair : map.entrySet()) {
-                System.out.print(pair.getKey().getName() + ", ");
-            }
-            System.out.println("");
+
+    public static void showUsers(Map<User, Integer> map) {
+        for (Map.Entry<User, Integer> pair : map.entrySet()) {
+            System.out.print(pair.getKey().getName() + ", ");
         }
+        System.out.println("");
     }
+}
