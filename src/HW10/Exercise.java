@@ -49,7 +49,7 @@ public class Exercise {
     public static void ex4(File file) {
         List<String> text = ex1(file);
         for (String str: text){
-            System.out.println(str.replaceAll("[\\s\n\t]","\\$"));
+            System.out.println(str.replaceAll("[^a-zA-Zа-яА-Я\\d]","\\$"));
         }
     }
 }
