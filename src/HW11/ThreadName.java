@@ -1,9 +1,17 @@
 package HW11;
 
 public class ThreadName implements Runnable {
-    Name flag = new Name();
+
     @Override
-    public void run() {
-       flag.name();
+    public synchronized void run() {
+        while (true) {
+            notify();
+            System.out.println(Thread.currentThread().getName());
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
